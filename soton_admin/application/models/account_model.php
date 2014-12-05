@@ -2,11 +2,15 @@
 
 class Account_model extends CI_Model {
 	
-	function login() {
+	function login($email, $password) {
 	
-		$result = $this->db->select('password')->from('Account')->where('email', $array['email'])->get();
+		$query = $this->db->from('Account')->where('email', $email)->where('password', $password)->limit(1)->get();
 		
-		return $result->result();
+		if($query->num_rows > 0) {
+			return $query->row();
+		}
+		
+		return false;
 	}
 }
 ?>
