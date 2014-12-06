@@ -3,6 +3,7 @@
 	<section class="wrapper site-min-height">
     	<div class="row mt">
         	<div class="col-lg-12">
+        		DASHBOARD
           	</div>
         </div>
 	</section><! --/wrapper -->

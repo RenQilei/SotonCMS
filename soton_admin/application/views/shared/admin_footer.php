@@ -18,7 +18,14 @@
     <script src="<?php echo base_url(); ?>assets/js/jquery.scrollTo.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/jquery.nicescroll.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>assets/js/jquery.sparkline.js"></script>
-
+    
+    <!-- bootstrap tags input -->
+    <script src="<?php echo base_url(); ?>assets/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/bootstrap-tagsinput/bootstrap-tagsinput-angular.min.js"></script>
+    
+    <script type="text/javascript">
+    	$('input').val();
+    </script>
 
     <!--common script for all pages-->
     <script src="<?php echo base_url(); ?>assets/js/common-scripts.js"></script>

@@ -15,7 +15,8 @@
     <link href="<?php echo base_url(); ?>assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/zabuto_calendar.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/js/gritter/css/jquery.gritter.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/lineicons/style.css">    
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/lineicons/style.css">
+    <link href="<?php echo base_url(); ?>assets/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
     
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet">
@@ -47,6 +48,7 @@
             
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
+            		<li><a class="logout" href="http://localhost:8888/SotonCMS/index.php">Website</a></li>
                     <li><a class="logout" href="<?php echo site_url('account/logout'); ?>">Logout</a></li>
             	</ul>
             </div>

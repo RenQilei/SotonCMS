@@ -5,22 +5,29 @@
     	<div class="row mt">
         	<div class="col-lg-12">
         		<div class="form-panel">
-        			<form class="form-horizontal style-form" method="get">
+        			<form class="form-horizontal style-form" method="post" action="<?php echo site_url('article/addarticle'); ?>">
                     	<div class="form-group">
                         	<label class="col-sm-2 col-sm-2 control-label">Title</label>
                             <div class="col-sm-10">
-                            	<input type="text" class="form-control">
+                            	<input type="text" class="form-control" name="title">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12">
-                            	<textarea type="text" class="form-control">
+                            	<textarea type="text" class="form-control" name="contents">
                             	</textarea>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Tags</label>
+                            <div class="col-sm-10">
+                            	<input data-role="tagsinput" type="text" class="form-control" name="tags">
+                            </div>
+                        </div>
+                        </div>
 						<div class="form-group">
                             <div class="col-sm-4">
-                            	<button type="button" class="btn btn-success">POST</button>
+                            	<button type="submit" class="btn btn-success">POST</button>
                             </div>
                         </div>
                         
