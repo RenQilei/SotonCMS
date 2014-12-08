@@ -14,7 +14,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12">
-                            	<textarea type="text" class="form-control" name="contents">
+                            	<textarea type="text" class="ckeditor form-control" name="contents">
                             	</textarea>
                             </div>
                         </div>

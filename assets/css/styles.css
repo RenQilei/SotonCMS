@@ -5,7 +5,7 @@
 /* custom template */
 html, body {
    height: 100%;
-   font-family:'Open Sans',arial,sans-serif;
+   font-family: 'courier new',arial,sans-serif;
 }
 
 a {
@@ -51,7 +51,7 @@ a {
 }
 
 .divider {
-	margin-top:32px;
+	margin-top:15px;
 }
 
 #main {
@@ -63,6 +63,9 @@ a {
   width:70px;
 }
 
+#sidebar {
+}
+
 #sidebar, #sidebar a {
     color:#ffffff;
     background-color:transparent;
@@ -71,23 +74,61 @@ a {
 #sidebar a.logo {
   display:block;
   padding:3px;
-  background-color:#fff;
-  color:#777777;
-  height:40px;
-  width:40px;
-  margin:15px;
-  font-size:26px;
+  color:#fff;
+  height:56px;
+  margin:20px 0 40px 0;
+  font-family: 'summon';
+  font-size:48px;
   font-weight:700;
-  text-align:center;
+  text-align:right;
   text-decoration:none;
   text-shadow:0 0 0;
 }
+
+#sidebar #navbar li {
+	text-align: right;
+	font-size: 27px;
+	margin-bottom: 20px;
+}
+
 #sidebar-footer {
   position:absolute;bottom:5px;
 }
 #footer {
   margin-bottom:20px;
 }
+
+#right #abstract {
+	text-align: justify;
+	font-size: 14px;
+	line-height: 18px;
+}
+
+#single-article {
+	
+}
+
+#single-article #info {
+	font-size: 14px;
+	color: rgb(244, 179, 80);
+	margin-top: 15px;
+}
+
+#single-article #info a {
+	color: rgb(244, 179, 80);
+}
+
+#single-article #info a:hover {
+	color: rgb(242, 120, 75);
+}
+
+#single-article #contents {
+	margin-top: 20px;
+	font-size: 16px;
+	line-height: 22px;
+	text-align: justify;
+}
+
 
 /* center and adjust the sidebar contents on smaller devices */
 @media (max-width: 768px) {
@@ -104,7 +145,6 @@ a {
     margin-bottom:30px;
   }
 }
-
 
 
 

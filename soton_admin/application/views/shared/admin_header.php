@@ -23,6 +23,7 @@
     <link href="<?php echo base_url(); ?>assets/css/style-responsive.css" rel="stylesheet">
 
     <script src="<?php echo base_url(); ?>assets/js/chart-master/Chart.js"></script>
+    <script src="<?php echo base_url(); ?>assets/ckeditor/ckeditor.js"></script>
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -48,7 +49,7 @@
             
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-            		<li><a class="logout" href="http://localhost:8888/SotonCMS/index.php">Website</a></li>
+            		<li><a class="logout" href="http://localhost:8888/SotonCMS/index.php" target="_blank">Website</a></li>
                     <li><a class="logout" href="<?php echo site_url('account/logout'); ?>">Logout</a></li>
             	</ul>
             </div>

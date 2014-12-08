@@ -28,9 +28,9 @@
                             		?>
                             		</td>
                             		<td class="numeric">
-	                            		<a href="">update</a>
+	                            		<a href="<?php echo site_url('article/updatearticle/'.$item->id); ?>">update</a>
 	                            		&nbsp;&nbsp;
-	                            		<a href="">delete</a>
+	                            		<a href="<?php echo site_url('article/deletearticle/'.$item->id); ?>">delete</a>
                             		</td>
                             	</tr>
                             <?php } ?>

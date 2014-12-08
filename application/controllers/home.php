@@ -11,6 +11,8 @@ class Home extends CI_Controller {
 		
 		$this->load->vars($data);
 		
+		$this->load->view('shared/leftside');
 		$this->load->view('home/index');
+		$this->load->view('shared/footer');
 	}
 }
