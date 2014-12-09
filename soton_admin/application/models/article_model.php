@@ -90,6 +90,13 @@ class Article_model extends CI_Model {
 		return true;
 	}
 	
+	function publisharticle($id) {
+		$data['ispublished'] = 1;
+		$query = $this->db->where('id', $id)->update('Article', $data);
+		
+		return $query;
+	}
+	
 	function deletearticle($id) {
 		$data['isdeleted'] = 1;
 		$query = $this->db->where('id', $id)->update('Article', $data);
@@ -99,14 +106,28 @@ class Article_model extends CI_Model {
 	
 	function listarticle() {
 		
-		$query = $this->db->from('Article')->where('isdeleted', '0')->get();
+		$query = $this->db->select('ar.id, ar.title, ar.contents, ar.writer, ac.name, ar.datetime')->from('Article as ar')->join('Account as ac', 'ac.id = ar.writer')->where('isdeleted', '0')->where('ispublished', '1')->get();
+		
+		return $query->result();
+	}
+	
+	function un_listarticle() {
+		
+		$query = $this->db->select('ar.id, ar.title, ar.contents, ar.writer, ac.name, ar.datetime')->from('Article as ar')->join('Account as ac', 'ac.id = ar.writer')->where('isdeleted', '0')->where('ispublished', '0')->get();
 		
 		return $query->result();
 	}
 	
 	function listArticleOfWriter($writer) {
 		
-		$query = $this->db->from('Article')->where('writer', $writer)->where('isdeleted', '0')->get();
+		$query = $this->db->select('ar.id, ar.title, ar.contents, ar.writer, ac.name, ar.datetime')->from('Article as ar')->join('Account as ac', 'ac.id = ar.writer')->where('writer', $writer)->where('isdeleted', '0')->where('ispublished', '1')->get();
+		
+		return $query->result();
+	}
+	
+	function un_listArticleOfWriter($writer) {
+		
+		$query = $this->db->select('ar.id, ar.title, ar.contents, ar.writer, ac.name, ar.datetime')->from('Article as ar')->join('Account as ac', 'ac.id = ar.writer')->where('writer', $writer)->where('isdeleted', '0')->where('ispublished', '1')->get();
 		
 		return $query->result();
 	}
@@ -121,6 +142,30 @@ class Article_model extends CI_Model {
 					  ->get();
 		
 		return $query->result();
+	}
+	
+	function numberOfPubisedArticle() {
+		$query = $this->db->from('Article')->where('ispublished', '1')->get();
+		
+		return count($query->result());
+	}
+	
+	function numberOfUnpubisedArticle() {
+		$query = $this->db->from('Article')->where('ispublished', '0')->get();
+		
+		return count($query->result());
+	}
+	
+	function numberOfPubisedArticleOfWriter($id) {
+		$query = $this->db->from('Article')->where('ispublished', '1')->where('writer', $id)->get();
+		
+		return count($query->result());
+	}
+	
+	function numberOfUnpubisedArticleOfWriter($id) {
+		$query = $this->db->from('Article')->where('ispublished', '0')->where('writer', $id)->get();
+		
+		return count($query->result());
 	}
 }
 ?>

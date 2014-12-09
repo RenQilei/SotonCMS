@@ -88,6 +88,16 @@ class Article extends MY_Controller {
 		}
 	}
 	
+	public function publisharticle() {
+		if($this->uri->segment(3)) {
+			$this->load->model('Article_model','article');
+			$query = $this->article->publisharticle($this->uri->segment(3));
+			if($query) {
+				redirect('article/managearticle');
+			}
+		}
+	}
+	
 	public function deletearticle() {
 		
 		if($this->uri->segment(3)) {
@@ -106,8 +116,16 @@ class Article extends MY_Controller {
 		$data['level'] = $account->level;
 		
 		$this->load->model('Article_model', 'article');
-		$result = $this->article->listArticleOfWriter($account->id); //echo $account->id;
-		$data['articlelist'] = $result;
+		if ($account->level == 2) {
+			$publishResult = $this->article->listarticle();
+			$unpublishResult = $this->article->un_listarticle();
+		}
+		else {
+			$publishResult = $this->article->listArticleOfWriter($account->id); //echo $account->id;
+			$unpublishResult = $this->article->un_listArticleOfWriter($account->id);
+		}
+		$data['articlelist'] = $publishResult; //print_r($result);
+		$data['unarticlelist'] = $unpublishResult;
 		
 		$this->load->vars($data);
 		

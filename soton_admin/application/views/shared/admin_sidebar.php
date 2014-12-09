@@ -34,7 +34,7 @@
                   </li>
 <?php
 	}
-	if ($level >= 3) {
+	if ($level >= 2) {
 ?>
                   <li class="sub-menu">
                       <a href="javascript:;" >
