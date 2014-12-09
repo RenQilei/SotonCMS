@@ -29,8 +29,7 @@
                             <div class="col-sm-10">
                             	<select class="form-control" name="level">
 									<option value="1" selected="selected">Writer</option>
-									<option value="2">Editor</option>
-									<option value="3">Admin</option>
+									<option value="2">Admin</option>
 								</select>
                             </div>
                         </div>
